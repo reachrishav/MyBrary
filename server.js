@@ -6,7 +6,7 @@ const express = require("express");
 const app = express();
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
-
+const methodOverride = require("method-override");
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
 const bookRouter = require("./routes/books");
@@ -18,6 +18,7 @@ app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(methodOverride("_method"));
 
 app.use("/", indexRouter);
 app.use("/authors/", authorRouter);
