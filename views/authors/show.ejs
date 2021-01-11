@@ -7,10 +7,5 @@
 </div>
 <% if(booksByAuthor.length > 0) { %> 
     <h2 class="page-header">Books by Author</h2>
-    <% booksByAuthor.forEach(book => { %> 
-            <a href="/books/<%= book.id %>">
-                <img height="100" width="150" src="<%= book.coverImagePath  %> ">
-            </a>
-            <%= book.title %>
-    <% }) %> 
+    <%- include('../partials/bookGrid',{books:booksByAuthor}) %> 
 <% } %> 

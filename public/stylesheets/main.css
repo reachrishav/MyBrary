@@ -3,6 +3,8 @@
 @import "shared/header.css";
 @import "shared/buttons.css";
 @import "shared/forms.css";
+@import "shared/authors.css";
+@import "shared/books.css";
 
 :root {
     font-family: "Fira Sans";
@@ -45,4 +47,7 @@ body {
 }
 .btn-row > *:first-child {
     margin-left: 0;
+}
+.error-message {
+    color: hsl(var(--color-danger-hue), 100%, 50%);
 }
